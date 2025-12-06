@@ -1,0 +1,190 @@
+/* ============================
+   ESTILOS GENERALES DEL BLOG
+   ============================ */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6; /* Mejora la lectura de los párrafos */
+}
+
+/* ============================
+   ENCABEZADO
+   ============================ */
+
+.header {
+    background-color: #4a90e2;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+.header p {
+    margin-top: 10px;
+    font-size: 1.1rem;
+}
+
+/* ============================
+   NAVEGACIÓN (Mejorada con Flexbox)
+   ============================ */
+
+.nav {
+    background-color: #333;
+    padding: 10px;
+    /* Usamos Flexbox para centrar y permitir que se acomoden */
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Permite que los botones bajen si no caben */
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    margin: 5px 15px; /* Un poco de margen vertical por si se apilan */
+    padding: 8px 12px; /* Área de clic más grande para dedos */
+    font-weight: bold;
+    border-radius: 4px;
+    transition: background 0.3s; /* Suaviza el efecto hover */
+}
+
+.nav a:hover {
+    background-color: #555; /* Fondo gris al pasar el mouse */
+    text-decoration: none;
+}
+
+/* ============================
+   CONTENEDOR PRINCIPAL
+   ============================ */
+
+.container {
+    width: 90%;
+    max-width: 900px;
+    margin: 30px auto;
+    /* Para evitar que el footer se pegue si hay poco contenido: */
+    min-height: 50vh; 
+}
+
+/* ============================
+   CADA PUBLICACIÓN DEL BLOG
+   ============================ */
+
+.post {
+    background-color: white;
+    padding: 25px; /* Un poco más de aire */
+    margin-bottom: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.post h2 {
+    margin-top: 0;
+    color: #4a90e2; /* Color del título igual al header */
+}
+
+.date {
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 15px;
+    display: block;
+}
+
+/* ============================
+   ESTILOS DEL FORMULARIO (NUEVO)
+   ============================ */
+
+form {
+    margin-top: 15px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+form input, 
+form textarea {
+    width: 100%; /* Ocupa todo el ancho disponible */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box; /* Asegura que el padding no rompa el ancho */
+    font-family: inherit;
+}
+
+form button {
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    width: 100%; /* Botón ancho en móviles */
+    transition: background 0.3s;
+}
+
+form button:hover {
+    background-color: #357abd;
+}
+
+/* ============================
+   PIE DE PÁGINA
+   ============================ */
+
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    font-size: 0.9rem;
+}
+
+/* ============================
+   MEDIA QUERIES (RESPONSIVE)
+   Aquí ocurre la magia para móviles
+   ============================ */
+
+/* Cuando la pantalla sea de 600px o menos (Móviles) */
+@media (max-width: 600px) {
+    
+    .header {
+        padding: 20px 10px; /* Menos relleno en el encabezado */
+    }
+
+    .header h1 {
+        font-size: 1.8rem; /* Título más pequeño */
+    }
+
+    .nav {
+        flex-direction: column; /* Apila los enlaces uno sobre otro */
+        align-items: center;
+    }
+
+    .nav a {
+        width: 100%; /* Botones de ancho completo */
+        text-align: center;
+        margin: 5px 0;
+        box-sizing: border-box;
+        background-color: #444; /* Un fondo sutil para distinguirlos */
+    }
+
+    .container {
+        width: 95%; /* Aprovecha más el ancho de la pantalla */
+        margin: 20px auto;
+    }
+
+    .post {
+        padding: 15px; /* Menos relleno interno en los posts */
+    }
+}

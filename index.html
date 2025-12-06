@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Blog Personal</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        /* ESTILOS NECESARIOS PARA EL CAMBIO DE PESTAÑAS */
+        
+        /* Por defecto, ocultamos todas las secciones con esta clase */
+        .seccion-contenido {
+            display: none;
+            animation: fadeEffect 0.5s; /* Efecto suave de aparición */
+        }
+
+        /* Esta clase se usa para mostrar la sección que esté seleccionada */
+        .seccion-visible {
+            display: block;
+        }
+
+        /* Pequeña animación para que no sea tan brusco el cambio */
+        @keyframes fadeEffect {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+
+        /* Un poco de estilo extra para el formulario por si no está en tu CSS */
+        form { display: flex; flex-direction: column; gap: 10px; max-width: 400px; margin-top: 20px;}
+        input, textarea { padding: 8px; }
+        button { padding: 10px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Mi Blog Personal de proyecto</h1>
+        <p>Escribiendo sobre tecnología, vida y aprendizaje continuo.</p>
+    </header>
+
+    <nav class="nav">
+        <a href="#" onclick="mostrarSeccion('inicio')">Inicio</a>
+        <a href="#" onclick="mostrarSeccion('acerca')">Acerca de mí</a>
+        <a href="#" onclick="mostrarSeccion('contacto')">Contacto</a>
+    </nav>
+
+    <main class="container">
+        
+        <div id="inicio" class="seccion-contenido seccion-visible">
+            <article class="post">
+                <h2>Primer publicación del blog</h2>
+                <p class="date">4 de diciembre de 2025</p>
+                <p>
+                    Bienvenido a mi blog. Este es el primer post donde comienzo a compartir mis ideas,
+                    proyectos y experiencias. Aquí escribiré sobre tecnología, programación y algunas
+                    reflexiones personales.
+                </p>
+            </article>
+
+            <article class="post">
+                <h2>Cómo inicié en el mundo de la tecnología</h2>
+                <p class="date">3 de diciembre de 2025</p>
+                <p>
+                    Empecé desde cero, sin saber por dónde comenzar. Con el tiempo descubrí la seguridad
+                    informática, los servidores y la programación, y todo se volvió parte de mi vida diaria.
+                </p>
+            </article>
+        </div>
+
+        <div id="acerca" class="seccion-contenido">
+            <article class="post">
+                <h2>Acerca de mí</h2>
+                <p>
+                    ¡Hola! Soy un entusiasta de la tecnología. Me dedico a crear proyectos que resuelvan 
+                    problemas reales y a documentar mi proceso de aprendizaje en este blog.
+                </p>
+                <h3>Lo que me gusta:</h3>
+                <ul>
+                    <li>Desarrollo Web (HTML, CSS, JS)</li>
+                    <li>Administración de Servidores</li>
+                    <li>Creación de contenido digital</li>
+                </ul>
+            </article>
+        </div>
+
+        <div id="contacto" class="seccion-contenido">
+            <article class="post">
+                <h2>Contacto</h2>
+                <p>Si quieres hablar sobre tecnología o colaborar, déjame un mensaje:</p>
+                
+                <form>
+                    <label>Nombre:</label>
+                    <input type="text" placeholder="Tu nombre">
+                    
+                    <label>Correo:</label>
+                    <input type="email" placeholder="tucorreo@ejemplo.com">
+                    
+                    <label>Mensaje:</label>
+                    <textarea rows="4" placeholder="Escribe aquí..."></textarea>
+                    
+                    <button type="submit">Enviar</button>
+                </form>
+            </article>
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <p>© 2025 Mi Blog Personal — Creado solo con HTML y CSS</p>
+    </footer>
+
+    <script>
+        function mostrarSeccion(idSeccion) {
+            // 1. Ocultar todas las secciones
+            var secciones = document.getElementsByClassName("seccion-contenido");
+            for (var i = 0; i < secciones.length; i++) {
+                secciones[i].classList.remove("seccion-visible");
+            }
+
+            // 2. Mostrar solo la sección que el usuario pidió
+            document.getElementById(idSeccion).classList.add("seccion-visible");
+        }
+    </script>
+</body>
+</html>
