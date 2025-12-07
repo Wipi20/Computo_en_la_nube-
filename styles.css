@@ -8,7 +8,7 @@ body {
     padding: 0;
     background-color: #f4f4f4;
     color: #333;
-    line-height: 1.6; /* Mejora la lectura de los párrafos */
+    line-height: 1.6; 
 }
 
 /* ============================
@@ -39,24 +39,22 @@ body {
 .nav {
     background-color: #333;
     padding: 10px;
-    /* Usamos Flexbox para centrar y permitir que se acomoden */
     display: flex;
     justify-content: center;
-    flex-wrap: wrap; /* Permite que los botones bajen si no caben */
+    flex-wrap: wrap; 
 }
-
 .nav a {
     color: white;
     text-decoration: none;
-    margin: 5px 15px; /* Un poco de margen vertical por si se apilan */
-    padding: 8px 12px; /* Área de clic más grande para dedos */
+    margin: 5px 15px; 
+    padding: 8px 12px; 
     font-weight: bold;
     border-radius: 4px;
-    transition: background 0.3s; /* Suaviza el efecto hover */
+    transition: background 0.3s; 
 }
-
+/* Fondo gris al pasar el mouse */
 .nav a:hover {
-    background-color: #555; /* Fondo gris al pasar el mouse */
+    background-color: #555; 
     text-decoration: none;
 }
 
@@ -68,7 +66,6 @@ body {
     width: 90%;
     max-width: 900px;
     margin: 30px auto;
-    /* Para evitar que el footer se pegue si hay poco contenido: */
     min-height: 50vh; 
 }
 
@@ -78,7 +75,7 @@ body {
 
 .post {
     background-color: white;
-    padding: 25px; /* Un poco más de aire */
+    padding: 25px;
     margin-bottom: 25px;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -86,7 +83,7 @@ body {
 
 .post h2 {
     margin-top: 0;
-    color: #4a90e2; /* Color del título igual al header */
+    color: #4a90e2; 
 }
 
 .date {
@@ -112,12 +109,12 @@ form label {
 
 form input, 
 form textarea {
-    width: 100%; /* Ocupa todo el ancho disponible */
+    width: 100%; 
     padding: 10px;
     margin-bottom: 15px;
     border: 1px solid #ddd;
     border-radius: 5px;
-    box-sizing: border-box; /* Asegura que el padding no rompa el ancho */
+    box-sizing: border-box; 
     font-family: inherit;
 }
 
@@ -129,7 +126,7 @@ form button {
     border-radius: 5px;
     cursor: pointer;
     font-size: 1rem;
-    width: 100%; /* Botón ancho en móviles */
+    width: 100%; 
     transition: background 0.3s;
 }
 
@@ -151,36 +148,35 @@ form button:hover {
 }
 
 /* ============================
-   MEDIA QUERIES (RESPONSIVE)
-   Aquí ocurre la magia para móviles
+   RESPONSIVE
    ============================ */
 
 /* Cuando la pantalla sea de 600px o menos (Móviles) */
 @media (max-width: 600px) {
     
     .header {
-        padding: 20px 10px; /* Menos relleno en el encabezado */
+        padding: 20px 10px; 
     }
 
     .header h1 {
-        font-size: 1.8rem; /* Título más pequeño */
+        font-size: 1.8rem; 
     }
 
     .nav {
-        flex-direction: column; /* Apila los enlaces uno sobre otro */
+        flex-direction: column; 
         align-items: center;
     }
 
     .nav a {
-        width: 100%; /* Botones de ancho completo */
+        width: 100%;
         text-align: center;
         margin: 5px 0;
         box-sizing: border-box;
-        background-color: #444; /* Un fondo sutil para distinguirlos */
+        background-color: #444; 
     }
 
     .container {
-        width: 95%; /* Aprovecha más el ancho de la pantalla */
+        width: 95%; 
         margin: 20px auto;
     }
 
@@ -188,27 +184,27 @@ form button:hover {
         padding: 15px; /* Menos relleno interno en los posts */
     }
 }
-
- /* ESTILOS NECESARIOS PARA EL CAMBIO DE PESTAÑAS */
+/* ============================
+   ESTILOS PARA EL CAMBIO DE PESTAÑAS
+   ============================ */
         
-        /* Por defecto, ocultamos todas las secciones con esta clase */
+        /* Por defecto, ocultar todas las secciones  */
         .seccion-contenido {
             display: none;
             animation: fadeEffect 0.5s; /* Efecto suave de aparición */
         }
 
-        /* Esta clase se usa para mostrar la sección que esté seleccionada */
         .seccion-visible {
             display: block;
         }
 
-        /* Pequeña animación para que no sea tan brusco el cambio */
+        /* Pequeña animación */
         @keyframes fadeEffect {
             from {opacity: 0;}
             to {opacity: 1;}
         }
 
-        /* Un poco de estilo extra para el formulario por si no está en tu CSS */
+        /* Estilo formulario */
         form { display: flex; flex-direction: column; gap: 10px; max-width: 400px; margin-top: 20px;}
         input, textarea { padding: 8px; }
         button { padding: 10px; cursor: pointer; }
