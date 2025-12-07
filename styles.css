@@ -188,3 +188,27 @@ form button:hover {
         padding: 15px; /* Menos relleno interno en los posts */
     }
 }
+
+ /* ESTILOS NECESARIOS PARA EL CAMBIO DE PESTAÑAS */
+        
+        /* Por defecto, ocultamos todas las secciones con esta clase */
+        .seccion-contenido {
+            display: none;
+            animation: fadeEffect 0.5s; /* Efecto suave de aparición */
+        }
+
+        /* Esta clase se usa para mostrar la sección que esté seleccionada */
+        .seccion-visible {
+            display: block;
+        }
+
+        /* Pequeña animación para que no sea tan brusco el cambio */
+        @keyframes fadeEffect {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+
+        /* Un poco de estilo extra para el formulario por si no está en tu CSS */
+        form { display: flex; flex-direction: column; gap: 10px; max-width: 400px; margin-top: 20px;}
+        input, textarea { padding: 8px; }
+        button { padding: 10px; cursor: pointer; }
